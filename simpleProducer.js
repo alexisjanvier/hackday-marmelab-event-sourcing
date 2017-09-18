@@ -22,7 +22,7 @@ producer.on('ready', function() {
     var payload = [{
         topic: 'hackday',
         messages: JSON.stringify({
-            content: 'something',
+            content: 'something New',
         }),
         attributes: 1 /* Use GZip compression for the payload */
     }];
