@@ -1,11 +1,8 @@
 {
   "name": "hackday-event-sourcing",
   "version": "1.0.0",
-  "description": "An hackday about event sourcing with kafka",
+  "description": "An Hackday about event sourcing with kafka",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexisjanvier/hackday-marmelab-event-sourcing.git"
@@ -22,7 +19,20 @@
   },
   "homepage": "https://github.com/alexisjanvier/hackday-marmelab-event-sourcing#readme",
   "dependencies": {
-    "@std/esm": "^0.10.1",
     "kafka-node": "^2.2.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.5.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-prettier": "^2.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.3.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "prettier": "^1.6.1"
   }
 }
