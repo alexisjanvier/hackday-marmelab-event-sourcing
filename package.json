@@ -1,0 +1,28 @@
+{
+  "name": "hackday-event-sourcing",
+  "version": "1.0.0",
+  "description": "An hackday about event sourcing with kafka",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexisjanvier/hackday-marmelab-event-sourcing.git"
+  },
+  "keywords": [
+    "event-sourcing",
+    "kafka",
+    "DDD"
+  ],
+  "author": "Alexis Janvier <alexis@marmelab.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexisjanvier/hackday-marmelab-event-sourcing/issues"
+  },
+  "homepage": "https://github.com/alexisjanvier/hackday-marmelab-event-sourcing#readme",
+  "dependencies": {
+    "@std/esm": "^0.10.1",
+    "kafka-node": "^2.2.3"
+  }
+}
