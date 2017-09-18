@@ -1,0 +1,49 @@
+type User {
+    id: ID!
+    username: String
+    first_name: String
+    last_name: String
+    full_name: String
+}
+
+type Sprint {
+    id: ID!
+    # start date of the sprint
+    start_date: Date!
+    # end date of the sprint
+    end_date: Date!
+    # The estimated number of points that can be achieved during the sprint
+    estimated_velocity: Int!
+}
+
+type Task {
+    id: ID!
+    title: String!
+    # The estimated number of points this task will last
+    estimated_cost: Int
+    # sprint in which the task is programmed
+    sprint_id: Int
+}
+
+type PlanningPocker {
+    id: ID!
+    # sprint for which the planning pocker is made
+    sprint_id: Int!
+    # The PO creator of the PP
+    owner: User!
+    # Users invited to the tasks assessment
+    attendees: [User]
+}
+
+scalar Date
+
+type Query {
+    Users: [User]
+    Srints: [Sprint]
+    PlanningPocker(id: ID!): PlanningPocker
+}
+
+type Mutation {
+    createPlanningPocker(sprintId: Int): PlanningPocker
+    # Create a new planning pocker for a specific sprint
+}

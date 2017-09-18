@@ -9,9 +9,14 @@ install: ## Setup all project dependencies
 
 start: ## Start dockerised kafka
 	docker-compose -p hackday up -d
+	./node_modules/.bin/pm2 start infrastructure/pm2/server.json
 
 stop: ## Stop dockerised kafka
 	docker-compose -p hackday down
+	./node_modules/.bin/pm2 delete infrastructure/pm2/server.json
 
 log-kafka: ## Display new message in kafka hackday topic
 	kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic hackday --from-beginning
+
+log-pm2: ## Display GraphQl server logs
+	./node_modules/.bin/pm2 logs

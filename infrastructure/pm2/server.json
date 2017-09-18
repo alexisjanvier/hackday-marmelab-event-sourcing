@@ -1,0 +1,10 @@
+{
+    "apps": [
+        {
+            "name": "graph-ql-server",
+            "exec_mode": "fork_mode",
+            "script": "src/server/index.js",
+            "watch": ["src/server/"]
+        }
+    ]
+}
