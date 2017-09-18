@@ -1,17 +1,15 @@
 type User {
     id: ID!
     username: String
-    first_name: String
-    last_name: String
-    full_name: String
+    email: String
 }
 
 type Sprint {
     id: ID!
     # start date of the sprint
-    start_date: Date!
+    start_date: String!
     # end date of the sprint
-    end_date: Date!
+    end_date: String!
     # The estimated number of points that can be achieved during the sprint
     estimated_velocity: Int!
 }
@@ -35,15 +33,14 @@ type PlanningPocker {
     attendees: [User]
 }
 
-scalar Date
-
 type Query {
     Users: [User]
-    Srints: [Sprint]
+    Sprints: [Sprint]
+    Tasks: [Task]
     PlanningPocker(id: ID!): PlanningPocker
 }
 
 type Mutation {
-    createPlanningPocker(sprintId: Int): PlanningPocker
+    createPlanningPocker(sprintId: Int!): PlanningPocker
     # Create a new planning pocker for a specific sprint
 }
