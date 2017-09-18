@@ -3,7 +3,26 @@ const Query = {
 };
 
 const Mutation = {
-    createPlanningPocker: id => PlanningPocker
+    createPlanningPocker: (root, { sprintId, ownerId, attendees }, { kafkaRestClient }) => {
+        console.log('SPRINT ID: ', sprintId);
+        console.log('OWNER ID: ', ownerId);
+        console.log('attendees: ', attendees.split(','));
+
+        kafkaRestClient.produce(
+            'hackday',
+            JSON.stringify({
+                event: 'planningPockerCreated',
+                data: {
+                    sprintId,
+                    ownerId,
+                    attendees: attendees.split(',')
+                }
+            }),
+            error => console.log(error)
+        );
+
+        return PlanningPocker;
+    }
 };
 
 const PlanningPocker = {

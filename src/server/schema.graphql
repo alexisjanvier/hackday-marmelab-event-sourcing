@@ -41,6 +41,6 @@ type Query {
 }
 
 type Mutation {
-    createPlanningPocker(sprintId: Int!): PlanningPocker
+    createPlanningPocker(sprintId: Int!, ownerId: Int!, attendees: String!): PlanningPocker
     # Create a new planning pocker for a specific sprint
 }
